@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "years",
+  "info": {
+    "singularName": "year",
+    "pluralName": "years",
+    "displayName": "Year",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Year": {
+      "unique": false,
+      "required": true,
+      "type": "biginteger"
+    },
+    "facts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::fact.fact",
+      "mappedBy": "Year"
+    }
+  }
+}

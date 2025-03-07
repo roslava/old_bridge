@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-rubik: var(--font-rubik);
+  --font-teko: var(--font-teko);
+  --font-trixie: var(--font-trixie);
+}
+
+body, html {
+  height: 100%;
+}
+
+.custom-pseudo {
+  @apply relative;
+}
+
+html {
+  scroll-behavior: smooth;
+}
