@@ -439,6 +439,18 @@ export interface ApiHomeScreenHomeScreen extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    full_text: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    lead: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -449,6 +461,12 @@ export interface ApiHomeScreenHomeScreen extends Struct.CollectionTypeSchema {
       true
     > &
       Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    part_of_the_text: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -473,6 +491,7 @@ export interface ApiPhotoLensSliderPhotoLensSlider
   extends Struct.SingleTypeSchema {
   collectionName: 'photo_lens_sliders';
   info: {
+    description: '';
     displayName: 'Photo-lens-slider';
     pluralName: 'photo-lens-sliders';
     singularName: 'photo-lens-slider';

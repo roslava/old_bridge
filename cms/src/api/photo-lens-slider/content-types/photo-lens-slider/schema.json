@@ -4,7 +4,8 @@
   "info": {
     "singularName": "photo-lens-slider",
     "pluralName": "photo-lens-sliders",
-    "displayName": "Photo-lens-slider"
+    "displayName": "Photo-lens-slider",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,13 +13,13 @@
   "pluginOptions": {},
   "attributes": {
     "imgs": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": true
+      ]
     }
   }
 }
