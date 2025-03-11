@@ -25,6 +25,7 @@ export default {
         'primary-orange': '#ffaa17',
         'old-white': 'rgba(204,206,194,1)',
         'old-white-50': 'rgba(204,206,194,.5)',
+        'old-white-light': 'rgba(228,231,220,1)',
         'primary-orange-85': 'rgba(255,170,23,0.85)',
         'deep-black-orange': '#1c1403',
         'deep-black': '#17191c',

@@ -11,10 +11,7 @@ import ToolTipBox from "@/components/ToolTipBox/ToolTipBox";
 import RegularTextBlock from "@/components/RegularTextBlock/RegularTextBlock";
 import VladikavkazRailwayMap from "@/assets/img/Vladikavkaz_Railway_1899.webp"
 import Modal from "@/components/Modal/Modal";
-import Blazon from "@/components/Blazon/Blazon"
 import SideMenu from "@/components/SideMenu/SideMenu";
-
-// photoLensSlides - массив объектов. В каждом объекте есть src. Надо чтобы при повороте колеса перебирался масив photoLensSlides, и  через определенный градус src из очередного объекта передавалось в <PhotoLens src={src} к качестве пропса/>
 
 export default function IdeaScreen({homeScreens, photoLensSlides = []}) {
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);

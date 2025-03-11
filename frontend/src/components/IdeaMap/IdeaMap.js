@@ -4,7 +4,7 @@ import RailWayMapWay from "./img/Vladikavkaz_Railway_1899_Stavropol_small_way.gi
 
 export default function IdeaMap() {
     return (
-        <div className="relative w-full rounded-[8px] overflow-hidden aspect-[957/390] min-h-[200px]">
+        <div className="relative w-full rounded-[8px] overflow-hidden aspect-[957/390] w-full">
             <Image
                 src={RailWayMap}
                 width={957}
