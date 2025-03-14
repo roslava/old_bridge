@@ -9,16 +9,16 @@ import { useState } from 'react';
 import ImgSrc from "@/assets/img/Stavropol-railway-station_1905.jpg"
 import ToolTipBox from "@/components/ToolTipBox/ToolTipBox";
 import RegularTextBlock from "@/components/RegularTextBlock/RegularTextBlock";
-import VladikavkazRailwayMap from "@/assets/img/Vladikavkaz_Railway_1899.webp"
-import Modal from "@/components/Modal/Modal";
+import TextModal from "@/components/Modal/TextModal";
 import SideMenu from "@/components/SideMenu/SideMenu";
+import Map from '@/components/Map/Map'
 
 export default function IdeaScreen({homeScreens, photoLensSlides = []}) {
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalContent, setModalContent] = useState(null);
     const [modalType, setModalType] = useState('text');
-    const [modalCaption, setModalCaption] = useState('');
+    const [isMapOpen, setIsMapOpen] = useState(false);
 
     const handleRotationChange = (slideIndex) => {
         if (photoLensSlides.length > 0) {
@@ -33,10 +33,7 @@ export default function IdeaScreen({homeScreens, photoLensSlides = []}) {
     };
 
     const handleMapClick = () => {
-        setModalType('image');
-        setModalContent(VladikavkazRailwayMap);
-        setModalCaption('Схематическая карта Владикавказской железной дороги');
-        setIsModalOpen(true);
+        setIsMapOpen(true);
     };
 
     // Use default image if no slides are available or current slide has no url
@@ -56,7 +53,10 @@ export default function IdeaScreen({homeScreens, photoLensSlides = []}) {
                     <h1 className="md:text-h1 text-6xl font-family_heading uppercase">{homeScreens[4].title}</h1>
                     <div className="w-full space-y-[20px]">
                         <LeadIdea text={homeScreens[4].lead}/>
-                        <div onClick={handleMapClick} className="cursor-pointer">
+                        <div 
+                            onClick={handleMapClick} 
+                            className="cursor-pointer transform transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl"
+                        >
                             <IdeaMap/>
                         </div>
                         <RegularTextBlock text={homeScreens[4].part_of_the_text} handleReadMore={handleReadMore}/>
@@ -89,13 +89,13 @@ export default function IdeaScreen({homeScreens, photoLensSlides = []}) {
                 </div>
             </div>
             <BackgroundImg src={homeScreens[4].media[0].url} alt="Идея создания железной дороги"/>
-            <Modal 
+            <TextModal 
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 type={modalType}
                 content={modalContent}
-                imageCaption={modalCaption}
             />
+            {isMapOpen && <Map onClose={() => setIsMapOpen(false)} />}
         </>
     );
 }
