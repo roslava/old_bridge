@@ -43,6 +43,7 @@ export default function Coin() {
             className={faceViewStyle}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onDragStart={(e) => e.preventDefault()}
         >
             <Image
                 src={OldCoin}

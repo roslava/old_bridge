@@ -53,7 +53,8 @@ export default function IdeaScreen({homeScreens, photoLensSlides = []}) {
                     <h1 className="md:text-h1 text-6xl font-family_heading uppercase">{homeScreens[4].title}</h1>
                     <div className="w-full space-y-[20px]">
                         <LeadIdea text={homeScreens[4].lead}/>
-                        <div 
+                        <div
+                            onDragStart={(e) => e.preventDefault()}
                             onClick={handleMapClick} 
                             className="cursor-pointer transform transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl"
                         >
@@ -77,7 +78,7 @@ export default function IdeaScreen({homeScreens, photoLensSlides = []}) {
                             <PrjazhkaPlusOldCoin/>
                         </div>
                         <div className="z-[0] absolute bottom-[130px] -right-[50px]">
-                            <ShellRock/>
+                            {/*<ShellRock/>*/}
                         </div>
                         <div className="h-[403px] w-[411px] z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                             <PhotoLens src={currentImageUrl}/>

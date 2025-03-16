@@ -89,6 +89,7 @@ export default function SteamEngineWheel({ photoLensSlides, onRotationChange }) 
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onMouseMove={handleMouseMove}
+            onDragStart={(e) => e.preventDefault()}
         >
             <Image src={SteamEngineWheelImg} width={1100} height={1100} alt="Колесо паровоза" />
         </div>
